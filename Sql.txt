@@ -1,0 +1,7 @@
+SELECT pupilRef
+FROM Booking,Instructor
+WHERE Booking.instructorID = Instructor.instructorID
+AND hourlyRate = (
+    SELECT MIN(hourlyRate)
+    FROM Instructor
+);
